@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\자스 사다리 게임"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "헤커톤 강의"
+	}
+}

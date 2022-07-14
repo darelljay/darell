@@ -1,0 +1,95 @@
+package ㅋㅋ;
+
+import java.util.Scanner;
+
+public class Zz {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		int point = 10;
+
+		exit:while (true) {
+				int a = (int) (Math.random() * 10)+1;
+				System.out.println(a);
+			System.out.print("1.홀수 || 2.짝수 || 3.포인트 조회 || 4.continue || 5.종료!");
+			int b = sc.nextInt();
+				switch (b) {
+				case 1:
+					System.out.println("홀수를 선택 하셧습니다");
+					System.out.println("몇포인트를 넣으실 건가요? ");
+					int mp = sc.nextInt();
+					if (mp > point) {
+						System.out.printf("현재 갖고 계신 포인트는 %d 입니다 더 낮은 금액을 넣어주세요\n", point);
+					} else {
+						point -= mp;
+						if (a % 2 != 0) {
+							System.out.println("정답입니다"+mp+"포인틀 획득하셧습니다.");
+							mp *= 2;
+							point+=mp;
+						} else {
+							System.out.println("틀리셧습니다"+mp+"포인트를 잃으셧습니다.");
+							point /= 2;
+						}
+					}
+					if (point<=0) {
+						System.out.println("ㅈㅈ요 게임끝!!!!(다시 할려면 f5를 누르시오)");
+						break exit
+						;
+					}else
+					System.out.println("계속하시겠습니까? 예(4) 아니오(5)");
+					int cont = sc.nextInt();
+					if (cont == 4) {
+						continue;
+					} else if (cont == 5) {
+						System.out.println("게임 종료!!");
+						break exit;
+					}
+
+				case 2:
+					System.out.println("짝수를 선택 하셧습니다");
+					System.out.println("몇포인트를 넣으실건가요?");
+					mp = sc.nextInt();
+					if (mp > point) {
+						System.out.printf("현재 갖고 계신 포인트는 %d 입니다 더 낮은 금약을 넣어주세요\n", point);
+					} else {
+						point -= mp;
+						if (a % 2 == 0) {
+							System.out.println("정답입니다"+mp+" 포인트를 획득하셧습니다.");
+							mp *= 2;
+							point+=mp;
+						} else {
+							if(point<=1) {
+								System.out.println("가지고 계신 모든 포인트를 잃으셧습니다.");
+							}else
+							System.out.println("틀리셧습니다"+mp+"포인트를 잃으셧습니다.");
+							point /= 2;
+						}
+					}if (point<=0) {
+						System.out.println("ㅈㅈ요 게임끝!!!!(다시 할려면 f5를 누르시오)");
+						break exit
+						;
+					}else
+					System.out.println("계속하시겠습니까? 예(4) 아니오(5)");
+					cont = sc.nextInt();
+					if (cont == 4) {
+						continue;
+					} else if (cont == 5) {
+						break exit;
+					}
+				case 3:
+					System.out.printf("현재 남은 포인트는 %d 입니다.", point);
+					System.out.println();
+					continue;
+				case 5:
+					System.out.println("게임 종료");
+					break exit;
+					
+				}
+		}
+		sc.close();
+
+	}
+
+}
